@@ -9,9 +9,11 @@ jobs:
     steps:
       - name: Get project data
         env:
-          GITHUB_TOKEN: ${{secrets.PROJECT_TOKEN}}
-          ACCOUNT: ${{secrets.PROJECT_ACCOUNT}}
-          PROJECT_NUMBER: ${{secrets.PROJECT_NUMBER}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
+          ACCOUNT: "dkhurana-qontigo"
+          PROJECT_NUMBER: "4"
+          #ACCOUNT: ${{secrets.PROJECT_ACCOUNT}}
+          #PROJECT_NUMBER: ${{secrets.PROJECT_NUMBER}}
         run: |
           gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
             query($account: String!, $number: Int!) {
@@ -36,7 +38,7 @@ jobs:
 
       - name: Add Issue to project
         env:
-          GITHUB_TOKEN: ${{secrets.PROJECT_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
           ISSUE_ID: ${{ github.event.issue.node_id }}
         run: |
           item_id="$( gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
@@ -55,7 +57,7 @@ jobs:
 
       - name: Set fields
         env:
-          GITHUB_TOKEN: ${{secrets.PROJECT_TOKEN}}
+          GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
         run: |
           gh api graphql --header 'GraphQL-Features: projects_next_graphql' -f query='
             mutation (

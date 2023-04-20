@@ -16,4 +16,4 @@ jobs:
           team: 'dkhurana-qontigo'
           owner: ${{ github.repository_owner }}
           repo: ${{ github.repository }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
