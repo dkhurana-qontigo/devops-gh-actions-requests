@@ -25,16 +25,13 @@ jobs:
                       ... on ProjectV2Field {
                         id
                         name
-                        status
                       }
                       ... on ProjectV2SingleSelectField {
                         id
                         name
-                        status
                         options {
                           id
                           name
-                          status
                         }
                       }
                     }
@@ -82,7 +79,9 @@ jobs:
                 projectId: $project
                 itemId: $item
                 fieldId: $status_field
-                value: $status_value
+                value: {
+                  singleSelectOptionId: $status_value
+                  }
               }) {
                 projectV2Item  {
                   id
