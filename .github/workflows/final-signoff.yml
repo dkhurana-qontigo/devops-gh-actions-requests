@@ -5,7 +5,7 @@ on:
     types: [labeled]
         
 env: 
-  fork-destination: dkhurana-qontigo # where to place the forks
+  fork-destination: ""
     
 jobs:
   find-action-name:
