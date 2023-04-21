@@ -165,7 +165,6 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         repo: ${{ needs.find-action-name.outputs.name }}
         owner: ${{ needs.find-action-name.outputs.owner }}
-        #org: ${{ env.fork-owner }}
         # todo: add a new comment to the issue indication the action of forking the repo over to the other org?
 
   # since dependabot alerts and dependency graph is enabled on the organization level, but that will not be enabled on new forks

@@ -40,8 +40,6 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         repo: ${{ needs.find-action-name.outputs.name }}
         owner: ${{ needs.find-action-name.outputs.owner }}
-        #org: ${{ env.fork-destination }}
-
       
     - uses: actions/github-script@v5  
       name: Report back to user
