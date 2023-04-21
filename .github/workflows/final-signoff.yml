@@ -5,7 +5,7 @@ on:
     types: [labeled]
         
 env: 
-  fork-destination: ""
+  fork-destination: dkhurana-qontigo # where to place the forks
     
 jobs:
   find-action-name:
@@ -40,7 +40,7 @@ jobs:
         token: ${{ secrets.GH_TOKEN }}
         repo: ${{ needs.find-action-name.outputs.name }}
         owner: ${{ needs.find-action-name.outputs.owner }}
-        org: ${{ env.fork-destination }}
+        #org: ${{ env.fork-destination }}
 
       
     - uses: actions/github-script@v5  
