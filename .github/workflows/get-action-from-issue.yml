@@ -29,7 +29,7 @@ jobs:
   find-action-name:
     runs-on: ubuntu-latest
     permissions:
-      issues: read
+      issues: write
     if: github.event.label.name == 'final-signoff' || github.event_name == 'workflow_dispatch'
 
     outputs:
