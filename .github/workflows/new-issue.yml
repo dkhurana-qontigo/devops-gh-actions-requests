@@ -11,7 +11,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{secrets.GH_TOKEN}}
           ACCOUNT: "dkhurana-qontigo"
-          PROJECT_NUMBER: "1"
+          PROJECT_NUMBER: "2"
           #ACCOUNT: ${{secrets.PROJECT_ACCOUNT}}
           #PROJECT_NUMBER: ${{secrets.PROJECT_NUMBER}}
         run: |
